@@ -70,7 +70,7 @@ try:
         st.altair_chart(chart_1, use_container_width=True)
 
         st.header("3. Top 5 Beverage Brands By Profit")
-        brand_profit = df.groupby('beverage_brand')['operating_profit'].sum().sort_values(ascending=False)
+        brand_profit = df.groupby('beverage_brand')['operating_profit'].sum().sort_values(ascending=False).head(5)
         st.write(brand_profit)
 
         brand_profit_df = brand_profit.reset_index()
@@ -92,7 +92,7 @@ try:
         st.altair_chart(chart_2, use_container_width=True)
 
         st.header("4. Top 5 Beverage Brands By Units Sold")
-        Unit_sold = df.groupby("beverage_brand")["units_sold"].sum().sort_values(ascending=False)
+        Unit_sold = df.groupby("beverage_brand")["units_sold"].sum().sort_values(ascending=False).head(5)
         st.write(Unit_sold)
 
         Unit_sold_df = Unit_sold.reset_index()
